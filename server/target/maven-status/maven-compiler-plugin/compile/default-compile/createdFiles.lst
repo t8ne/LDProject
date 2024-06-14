@@ -1,0 +1,8 @@
+server\exceptions\GameNotFoundException.class
+server\validation\GameAnalyzer.class
+server\communication\CommunicationData.class
+server\validation\MoveDetails.class
+server\GameThread$1.class
+run\Run.class
+server\Server.class
+server\GameThread.class
