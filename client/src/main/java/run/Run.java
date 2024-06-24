@@ -19,6 +19,7 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -38,10 +39,13 @@ public class Run extends Application {
 		infoStage.showAndWait();
 
     	this.client = new Client(credentials.address, credentials.port);
-		startStage.setTitle("Chinese checkers");
+		startStage.setTitle("Chinese Checkers");
+
+		Label titleLabel = new Label("Chinese Checkers");
+		titleLabel.setStyle("-fx-font-size: 24; -fx-font-weight: bold; -fx-end-margin: 20px;");
 		
-		Button createButton = new Button("Create");
-		Button joinButton = new Button("Join");
+		Button createButton = new Button("Criar");
+		Button joinButton = new Button("Juntar");
 		createButton.setMinSize(100, 20);
 		joinButton.setMinSize(100, 20);
 		createButton.setOnAction(new EventForCreateButton(startStage, client));
@@ -50,8 +54,9 @@ public class Run extends Application {
 		GridPane gridPane = new GridPane();
 		gridPane.setAlignment(Pos.CENTER);
 		gridPane.setVgap(10);
-		gridPane.add(createButton, 0, 0);
-		gridPane.add(joinButton, 0, 1);
+		gridPane.add(titleLabel, 0, 0, 2, 1);
+		gridPane.add(createButton, 0, 1);
+		gridPane.add(joinButton, 1, 1);
 		
 		Scene scene = new Scene(gridPane, 400, 300);
 		startStage.setScene(scene);

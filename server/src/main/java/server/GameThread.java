@@ -117,7 +117,7 @@ public class GameThread extends Thread {
         System.out.println("Waiting for move of player "+currentPlayerNumber);
         BufferedReader playerInputReader = communicationData.getInputReaderByNumber(currentPlayerNumber);
         PrintWriter playerPrinrWriter = communicationData.getPrintWriterByNumber(currentPlayerNumber);
-        playerPrinrWriter.println("Your turn.");
+        playerPrinrWriter.println("É a tua vez!");
         
         Player currentPlayer = game.getPlayerByNumber(currentPlayerNumber);
         do {

@@ -32,7 +32,7 @@ public class SkipTurnEvent implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent event) {
 		if(active && counter==0) {
 			client.sendOption("skip");
-			boardStage.setLabel("Wait for your turn...");
+			boardStage.setLabel("Espera pela tua vez...");
 			setUnactive();
 			boardStage.setUnactive();
 			counter++;

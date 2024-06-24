@@ -57,7 +57,7 @@ public class GameBuilderTest {
 		Assert.assertTrue(resultField.getRow() == 0);
 		Assert.assertTrue(resultField.getDiagonal() == 12);
 		
-		resultField = game.getFieldByCoordinates(3, 13); //takie pole nie istnieje
+		resultField = game.getFieldByCoordinates(3, 13);
 		Assert.assertTrue(resultField.getRow() == 0);
 		Assert.assertTrue(resultField.getDiagonal() == 0);
 		Assert.assertTrue(resultField.getColor().equals(FieldColor.NONE));

@@ -20,13 +20,13 @@ public class CreateGameStage extends Stage {
 		gridPane.setHgap(10);
 		gridPane.setVgap(10);
 		
-		Label playersLabel = new Label("Number of players:");
+		Label playersLabel = new Label("Nº de Jogadores:");
 		gridPane.add(playersLabel, 0, 0);
 
 		TextField playersTextField = new TextField();
 		gridPane.add(playersTextField, 1, 0);
 
-		Label botsLabel = new Label("Number of bots:");
+		Label botsLabel = new Label("Nº de Bots:");
 		gridPane.add(botsLabel, 0, 1);
 		
 		TextField botsTextField = new TextField();

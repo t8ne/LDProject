@@ -24,10 +24,10 @@ public class YourTurnStage extends Stage {
 		gridPane.setHgap(10);
 		gridPane.setVgap(10);
 		
-		Label label = new Label("Your turn!");
+		Label label = new Label("É a tua vez!");
 		gridPane.add(label, 0, 0);
 
-		Button button = new Button("Skip turn");
+		Button button = new Button("Saltar a vez");
 		
 		gridPane.add(button, 0, 1);
 		

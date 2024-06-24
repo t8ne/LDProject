@@ -70,17 +70,17 @@ public enum FieldColor {
     public String toString() {
     	switch (this) {
     	case RED:
-    		return "Red";
+    		return "Vermelho";
     	case GREEN:
-            return "Green";
+            return "Verde";
         case BLUE:
-            return "Blue";
+            return "Azul";
         case ORANGE:
-            return "Orange";
+            return "Laranja";
         case PURPLE:
-            return "Purple";
+            return "Roxo";
         case YELLOW:
-            return "Yellow";
+            return "Amarelo";
         default:
             return "";
     	}

@@ -20,11 +20,11 @@ public class ServerInfoStage extends Stage {
         pane.setHgap(10);
         pane.setVgap(10);
         Scene scene = new Scene(pane, 600, 400);
-        Label ipLabel = new Label("IP Address: ");
-        Label portLabel = new Label("Port: ");
+        Label ipLabel = new Label("Endereço IP: ");
+        Label portLabel = new Label("Porta: ");
         TextField ipField = new TextField();
         TextField portField = new TextField();
-        Button button = new Button("Connect");
+        Button button = new Button("Conectar");
 
         pane.add(ipLabel, 0, 0);
         pane.add(portLabel, 0, 1);

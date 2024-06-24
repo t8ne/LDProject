@@ -19,7 +19,7 @@ public class EventForJoinButton implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent actionEvent) {
 		client.sendOption("join");
 		this.stage.close();
-		InformationStage informationStage = new InformationStage("Waiting for more players...");
+		InformationStage informationStage = new InformationStage("Á espera de mais jogadores...");
 		informationStage.show();
 		client.setStage(informationStage);
 	}
