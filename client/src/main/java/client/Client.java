@@ -49,7 +49,7 @@ public class Client {
 			if (socket != null) {
 				socket.close();
 			}
-			System.out.println("Disconnected from the server.");
+			System.out.println("Disconectado do Servidor.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

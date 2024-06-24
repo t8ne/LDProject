@@ -29,6 +29,7 @@ public class LobbyStage extends Stage {
             numJoinedLabel = new Label(joinedPlayers);
             gameIdLabel = new Label(gameId);
             joinButton = new JoinButton(Integer.parseInt(hasStarted));
+
         }
 
 

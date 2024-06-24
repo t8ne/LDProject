@@ -11,6 +11,7 @@ import game.board.field.Field;
 import game.board.piece.Piece;
 import game.player.Player;
 import gui.SkipTurnEvent;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -58,6 +59,34 @@ public class BoardStage extends Stage implements EventHandler<MouseEvent> {
 		skipButton.setOnAction(skipEvent);
 
 		drawBoard();
+
+		this.setOnCloseRequest(event -> {
+			event.consume();
+			handleCloseRequest();
+		});
+	}
+
+	private void handleCloseRequest() {
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("Exit Game");
+		alert.setHeaderText("Deseja sair do jogo?");
+		alert.setContentText("Escolha uma opção.");
+
+		ButtonType buttonTypeSim = new ButtonType("Sim");
+		ButtonType buttonTypeNao = new ButtonType("Não");
+
+		alert.getButtonTypes().setAll(buttonTypeSim, buttonTypeNao);
+
+		alert.showAndWait().ifPresent(type -> {
+			if (type == buttonTypeSim) {
+				// Disconnect the client and close the stage
+				client.disconnect();
+				this.close();
+				Platform.exit();
+			} else if (type == buttonTypeNao) {
+				alert.close();
+			}
+		});
 	}
 
 	private void drawBoard() {

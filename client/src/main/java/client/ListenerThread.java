@@ -113,7 +113,7 @@ public class ListenerThread extends Thread {
                 }
             } catch (IOException e) {
                 // Socket has been closed, handle it here
-                System.err.println("Connection closed unexpectedly.");
+                System.err.println("Conexão fechada.");
                 // Optionally, notify the user or perform cleanup actions
                 Platform.runLater(() -> {
                 });
