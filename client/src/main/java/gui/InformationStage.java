@@ -14,7 +14,7 @@ public class InformationStage extends Stage {
 		this.string = string;
 		
 		Label label = new Label(string);
-		this.setTitle("Chinese checkers");
+		this.setTitle("Chinese Checkers");
 		label.setFont(new Font(15));
 		StackPane root = new StackPane();
         root.getChildren().add(label);

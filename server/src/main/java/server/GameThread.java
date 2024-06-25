@@ -171,6 +171,7 @@ public class GameThread extends Thread {
     }
     
     public void endMove() throws Exception {
+		//validator.resetTurn();
     	if(skip == true) {
     		if(this.hasFinished(currentPlayerNumber) && !this.isWinner(currentPlayerNumber)) {
             	this.addWinner(currentPlayerNumber);
@@ -196,6 +197,7 @@ public class GameThread extends Thread {
             	this.isOver = true;
             
             currentPlayerNumber = (currentPlayerNumber + 1) % game.getNumberOfPlayers();
+			// else if has jumped = true
         }
 
     }
