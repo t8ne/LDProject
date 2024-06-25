@@ -23,7 +23,7 @@ Seguem-se os passos para fazer o programa dar run:
  #### Em cada uma das VM Options das configurações meter o caminho do seu computador que o leva ás pastas de JavaFX. Apresenta-se a seguir um código exemplo de como as suas VM Options poderão ficar:
 
 
-```bash --module-path C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-controls\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-fxml\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-graphics\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-base\21 --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base```
+``` --module-path C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-controls\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-fxml\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-graphics\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-base\21 --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base```
 
 - A seguir aplicar e salvar ambas as configurações. Se quando der Run ao Servidor a palavra "LOOP" lhe aparecer no terminal, o seu servidor estará ligado. Se quando ligar o cliente lhe aparecer a devida página no ecrâ, tem o Cliente a funcionar.
 
