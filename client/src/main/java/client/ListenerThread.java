@@ -15,7 +15,16 @@ import gui.InformationStage;
 import gui.LobbyStage;
 import gui.YourTurnStage;
 import javafx.application.Platform;
-
+/**
+ * A classe ListenerThread é uma thread que escuta as mensagens recebidas do servidor e
+ * executa ações apropriadas com base nessas mensagens.
+ * <p>
+ * Esta classe gerencia a comunicação do cliente com o servidor, atualizando a interface do usuário e o estado do jogo.
+ * </p>
+ *
+ * @version 1.0
+ * @since 2024-06-25
+ */
 public class ListenerThread extends Thread {
     private BufferedReader br;
     private Client client;
@@ -24,12 +33,19 @@ public class ListenerThread extends Thread {
     private BoardStage boardStage;
     private volatile List<String> gl_args;
     private boolean running = true; // Flag to control the thread's execution
-
+    /**
+     * Construtor da classe <code>ListenerThread</code>.
+     *
+     * @param br O BufferedReader usado para ler mensagens do servidor.
+     * @param client O cliente associado a esta thread.
+     */
     public ListenerThread(BufferedReader br, Client client) {
         this.br = br;
         this.client = client;
     }
-
+    /**
+     * Para a execução da thread, fechando o BufferedReader para liberar recursos.
+     */
     public void stopThread() {
         running = false;
         try {
@@ -38,7 +54,9 @@ public class ListenerThread extends Thread {
             e.printStackTrace();
         }
     }
-
+    /**
+     * O método principal da thread que escuta as mensagens do servidor e executa ações apropriadas.
+     */
     public void run() {
         while (running) {
             try {
@@ -123,7 +141,12 @@ public class ListenerThread extends Thread {
             }
         }
     }
-
+    /**
+     * Verifica se uma linha é um número.
+     *
+     * @param line A linha a ser verificada.
+     * @return true se a linha for um número, caso contrário <code>false</code>.
+     */
     private boolean isNumber(String line) {
         try {
             Integer.parseInt(line);
@@ -132,7 +155,12 @@ public class ListenerThread extends Thread {
             return false;
         }
     }
-
+    /**
+     * Verifica se uma linha contém as configurações do jogo.
+     *
+     * @param line A linha a ser verificada.
+     * @return true se a linha contiver as configurações do jogo, caso contrário <code>false</code>.
+     */
     private boolean isGameSettings(String line) {
         return isNumber(line.substring(0, 1)) && isNumber(line.substring(2, 3)) && line.charAt(1) == ' ';
     }

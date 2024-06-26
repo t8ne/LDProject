@@ -10,9 +10,17 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 
-
+/**
+ * A classe ServerInfoStage representa o palco para configurar informações de conexão com o servidor.
+ * Esta classe exibe campos para inserir o endereço IP e a porta do servidor e um botão para conectar.
+ */
 public class ServerInfoStage extends Stage {
     ConnectionCredentials credentials;
+    /**
+     * Constrói um ServerInfoStage com as credenciais de conexão especificadas.
+     *
+     * @param credentials as credenciais de conexão com o servidor
+     */
     public ServerInfoStage(ConnectionCredentials credentials) {
         this.credentials = credentials;
         GridPane pane = new GridPane();

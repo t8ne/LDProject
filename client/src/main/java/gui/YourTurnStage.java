@@ -12,10 +12,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
+/**
+ * A classe YourTurnStage representa o palco que indica ao jogador que é a sua vez de jogar.
+ * Ele exibe uma mensagem e um botão para o jogador poder pular a sua vez.
+ */
 public class YourTurnStage extends Stage {
 	private Client client;
-	
+	/**
+	 * Constrói um YourTurnStage para o cliente especificado.
+	 *
+	 * @param client o cliente associado a esta janela de turno
+	 */
 	public YourTurnStage(Client client) {
 		this.setTitle("Chinese checkers");
 		
