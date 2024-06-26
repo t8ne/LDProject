@@ -32,4 +32,4 @@ Seguem-se os passos para fazer o programa dar run:
 ``` --module-path C:\Users\eduko\.m2\repository\org\openjfx\javafx-controls\21;C:\Users\eduko\.m2\repository\org\openjfx\javafx-fxml\21;C:\Users\eduko\.m2\repository\org\openjfx\javafx-graphics\21;C:\Users\eduko\.m2\repository\org\openjfx\javafx-base\21  --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base```
 - A seguir aplicar e salvar ambas as configurações. Se quando der Run ao Servidor a palavra "LOOP" lhe aparecer no terminal, o seu servidor estará ligado. Se quando ligar o cliente lhe aparecer a devida página no ecrâ, tem o Cliente a funcionar.
 
-#### É de notar que pode jogar com pessoas na mesma rede porém um dos jogadores terá que ter o servidor a correr.o servidor a correr. Se quiser jogar sozinho tem Bots implementados no jogo.
+#### É de notar que pode jogar com pessoas na mesma rede porém um dos jogadores terá que ter o servidor a correr. Se quiser jogar sozinho tem Bots implementados no jogo.
