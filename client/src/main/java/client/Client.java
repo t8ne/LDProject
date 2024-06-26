@@ -8,13 +8,27 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import javafx.stage.Stage;
-
+/**
+ * A classe Client representa um cliente que se conecta a um servidor via socket.
+ * <p>
+ * Esta classe gerencia a conexão do cliente, envio de opções para o servidor e a recepção de mensagens do servidor.
+ * </p>
+ *
+ * @version 1.0
+ * @since 2024-06-25
+ */
 public class Client {
 	private BufferedReader br;
 	private PrintWriter out;
 	private Socket socket;
 	private Stage stage;
-
+	/**
+	 * Construtor da classe <code>Client</code>.
+	 *
+	 * @param address O endereço IP do servidor ao qual o cliente se conectará.
+	 * @param port A porta do servidor à qual o cliente se conectará.
+	 * @throws IOException Se ocorrer um erro ao tentar se conectar ao servidor.
+	 */
 	public Client(String address, int port) {
 		try {
 			this.socket = new Socket(address, port);
@@ -36,7 +50,11 @@ public class Client {
 			closeResources(); // Ensure resources are closed if an error occurs
 		}
 	}
-
+	/**
+	 * Envia uma opção para o servidor.
+	 *
+	 * @param option A opção que será enviada ao servidor.
+	 */
 	public void sendOption(String option) {
 		if (out != null) {
 			out.println(option);
@@ -44,7 +62,11 @@ public class Client {
 			System.err.println("Output stream is not available.");
 		}
 	}
-
+	/**
+	 * Define o estágio da interface gráfica associado a este cliente.
+	 *
+	 * @param stage O estágio da interface gráfica.
+	 */
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
@@ -54,7 +76,9 @@ public class Client {
 			stage.close();
 		}
 	}
-
+	/**
+	 * Desconecta o cliente do servidor, fechando todos os recursos de entrada e saída.
+	 */
 	public void disconnect() {
 		try {
 			if (out != null) {
