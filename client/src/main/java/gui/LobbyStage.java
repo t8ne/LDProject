@@ -10,11 +10,16 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * A classe LobbyStage representa o palco da sala de espera do jogo.
+ * Esta classe cria uma janela que exibe informações sobre jogos disponíveis e permite que o jogador se junte a um jogo.
+ */
 public class LobbyStage extends Stage {
     private int currentRow = 1;
     private Client client;
-
+    /**
+     * Representa uma linha de informações de jogo na interface da sala de espera.
+     */
     private class GameInfoRow {
         public Label humanPlayerLabel;
         public Label botPlayerLabel;
@@ -22,7 +27,15 @@ public class LobbyStage extends Stage {
         public Label gameIdLabel;
         public JoinButton joinButton;
 
-
+        /**
+         * Constrói uma linha de informações de jogo com os dados fornecidos.
+         *
+         * @param humanPlayers número de jogadores humanos
+         * @param botPlayers número de bots
+         * @param joinedPlayers número de jogadores já juntados
+         * @param gameId ID do jogo
+         * @param hasStarted indica se o jogo já começou (0 para não, 1 para sim)
+         */
         public GameInfoRow(String humanPlayers, String botPlayers, String joinedPlayers, String gameId, String hasStarted) {
             humanPlayerLabel = new Label(humanPlayers);
             botPlayerLabel = new Label(botPlayers);
@@ -34,14 +47,21 @@ public class LobbyStage extends Stage {
 
 
     }
-
+    /**
+     * Botão personalizado para se juntar a um jogo, que pode ser desativado se o jogo já tiver começado.
+     */
     private class JoinButton extends Button {
         JoinButton(int gameStarted) {
             setText("Join");
             setDisable(gameStarted == 1);
         }
     }
-
+    /**
+     * Constrói um LobbyStage com o cliente especificado e uma lista de argumentos de jogo.
+     *
+     * @param client o cliente que se conectará aos jogos
+     * @param args uma lista de strings contendo os argumentos de cada jogo disponível
+     */
     public LobbyStage(Client client, List<String> args) {
         this.client = client;
         GridPane grid = new GridPane();

@@ -10,9 +10,22 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import run.Run;
-
+/**
+ * A classe <code>CreateGameStage</code> representa a janela de criação de um novo jogo.
+ * Esta janela permite que o usuário defina o número de jogadores e bots antes de iniciar um novo jogo.
+ * <p>
+ * Herda de <code>Stage</code> e utiliza JavaFX para a interface gráfica.
+ * </p>
+ *
+ * @version 1.0
+ * @since 2024-06-25
+ */
 public class CreateGameStage extends Stage {
-
+	/**
+	 * Construtor da classe <code>CreateGameStage</code>.
+	 *
+	 *  O cliente associado a esta janela de criação de jogo.
+	 */
 	public CreateGameStage(Client client) {
 		this.setResizable(false);
 		this.setTitle("Chinese checkers");
