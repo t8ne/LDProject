@@ -5,10 +5,23 @@ import game.board.field.FieldColor;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-
+/**
+ * A classe FieldCircle representa visualmente um círculo que representa um campo (Field) no tabuleiro.
+ * <p>
+ * Esta classe extende Circle e implementa BoardElement, permitindo interações e identificação como um elemento de tabuleiro.
+ * </p>
+ *
+ * @version 1.0
+ * @since 2024-06-25
+ */
 public class FieldCircle extends Circle implements BoardElement {
 	private Field field;
-	
+	/**
+	 * Construtor da classe FieldCircle.
+	 *
+	 *  O objeto Field associado a este círculo.
+	 *  O palco do tabuleiro onde o círculo será adicionado como um evento de clique.
+	 */
 	public FieldCircle(Field field, BoardStage boardStage) {
 		this.field = field;
 		
@@ -64,7 +77,11 @@ public class FieldCircle extends Circle implements BoardElement {
 	public boolean isPiece() {
 		return false;
 	}
-
+	/**
+	 * Obtém o objeto Field associado a este círculo.
+	 *
+	 * @return O objeto Field associado.
+	 */
 	public Field getField() {
 		return this.field;
 	}
@@ -73,7 +90,11 @@ public class FieldCircle extends Circle implements BoardElement {
 	public FieldColor getColor() {
 		return field.getColor();
 	}
-	
+	/**
+	 * Verifica se o campo associado a este círculo está livre.
+	 *
+	 * @return <code>true</code> se o campo estiver livre, caso contrário código = falso.
+	 */
 	public boolean isFree() {
 		return field.isFree();
 	}

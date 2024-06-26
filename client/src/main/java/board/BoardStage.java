@@ -28,7 +28,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import run.Run;
-
+/**
+ * A classe <code>BoardStage</code> representa o palco principal onde o jogo ocorre.
+ * <p>
+ * Este palco contém a representação gráfica do tabuleiro de jogo, botões para interação com o jogo,
+ * e lida com eventos de interface do usuário como cliques e fechamentos de janela.
+ * </p>
+ *
+ * @version 1.0
+ * @since 2024-06-25
+ */
 
 public class BoardStage extends Stage implements EventHandler<MouseEvent> {
 	@FXML
@@ -65,7 +74,9 @@ public class BoardStage extends Stage implements EventHandler<MouseEvent> {
 			handleCloseRequest();
 		});
 	}
-
+	/**
+	 * Método para lidar com o fecho da janela.
+	 */
 	private void handleCloseRequest() {
 		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Exit Game");
@@ -88,7 +99,9 @@ public class BoardStage extends Stage implements EventHandler<MouseEvent> {
 			}
 		});
 	}
-
+	/**
+	 * Método para desenhar o tabuleiro de jogo na interface gráfica.
+	 */
 	private void drawBoard() {
 		Group group = new Group();
 
@@ -148,22 +161,43 @@ public class BoardStage extends Stage implements EventHandler<MouseEvent> {
 		this.setScene(scene);
 
 	}
-
+	/**
+	 * Método para desenhar um campo (Field) no tabuleiro de jogo.
+	 *
+	 *  O objeto a ser desenhado.
+	 *  O grupo onde o campo será adicionado.
+	 */
 	private void drawField(Field field, Group group) {
 		FieldCircle fieldCircle = new FieldCircle(field, this);
 		group.getChildren().add(fieldCircle);
 	}
-
+	/**
+	 * Método para desenhar uma peça (Piece) no tabuleiro de jogo.
+	 *
+	 *  piece A peça a ser desenhada.
+	 *   O grupo onde a peça será adicionada.
+	 */
 	private void drawPiece(Piece piece, Group group) {
 		PieceCircle pieceCircle = new PieceCircle(piece, this);
 		this.pieces.add(pieceCircle);
 		group.getChildren().add(pieceCircle);
 	}
-
+	/**
+	 * Verifica se o elemento do tabuleiro pertence ao jogador atual.
+	 *
+	 * O elemento do tabuleiro a ser verificado.
+	 *  se o elemento pertencer ao jogador atual, caso contrário código = falso.
+	 */
 	private boolean isMyElement(BoardElement element) {
 		return element.getColor().equals(player.getColor());
 	}
-
+	/**
+	 * Obtém o objeto PieceCircle associado a uma peça específica.
+	 *
+	 *  A peça <code>Piece</code> para a qual se deseja obter o objeto PieceCircle.
+	 *  O objeto <code>PieceCircle</code> associado à peça especificada.
+	 * @throws Exception Se a peça não existir na lista de peças.
+	 */
 	private PieceCircle getPieceCircle(Piece piece) throws Exception {
 		for(PieceCircle pieceCircle: this.pieces) {
 			if(pieceCircle.getPiece() == piece)
@@ -171,20 +205,34 @@ public class BoardStage extends Stage implements EventHandler<MouseEvent> {
 		}
 		throw new Exception("Piece doesn't exist");
 	}
-
+	/**
+	 * Define o texto do rótulo de turno.
+	 *
+	 *  O texto a ser definido no rótulo de turno.
+	 */
 	public void setLabel(String string) {
 		this.turnLabel.setText(string);
 	}
-
+	/**
+	 * Ativa o tabuleiro, permitindo que o jogador interaja com ele quando é a vez dele.
+	 */
 	public void activate() {
 		this.active = true;
 		this.skipEvent.activate();
 	}
-
+	/**
+	 * Desativa o tabuleiro, impedindo que o jogador interaja com ele quando não é a vez dele.
+	 */
 	public void setUnactive() {
 		this.active = false;
 	}
 
+	/**
+	 * Realiza um movimento no jogo com base em uma linha de movimento especificada.
+	 *
+	 *  A linha de movimento a ser processada.
+	 * @throws Exception Se houver algum erro ao processar o movimento.
+	 */
 	public void makeMove(String moveLine) throws Exception {
 		String[] line = moveLine.split(" ");
 		int initialRow = Integer.parseInt(line[1]);
