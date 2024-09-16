@@ -24,7 +24,7 @@ Seguem-se os passos para fazer o programa dar run:
 
 - 1º Computador:
 
-``` --module-path C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-controls\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-fxml\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-graphics\21;C:\Users\AntonioRebelo\.m2\repository\org\openjfx\javafx-base\21 --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base```
+``` --module-path C:\Users\AntonioR\.m2\repository\org\openjfx\javafx-controls\21;C:\Users\AntonioR\.m2\repository\org\openjfx\javafx-fxml\21;C:\Users\AntonioR\.m2\repository\org\openjfx\javafx-graphics\21;C:\Users\AntonioR\.m2\repository\org\openjfx\javafx-base\21 --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base```
 
 
 - 2º Computador:
